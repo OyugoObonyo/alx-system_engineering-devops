@@ -1,0 +1,16 @@
+#!/bin/bash
+man(2)                                                         eniac man page                                                            man(2)
+NAME
+    eniac: - the first electronic general-purpose digital computer.
+SYNOPSIS
+    eniac
+DESCRIPTION
+    ENIAC was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
+OPTIONS
+    eniacs does not take any options.
+SEE ALSO
+    ENIAC coulld be programmed to perform complex sequences of opertions(2), including loops(2), branches(2), and subroutines(2).
+BUGS
+    No known bugs.
+AUTHOR
+    University of pennsylvania.
