@@ -1,1 +1,1 @@
-#Learning loops Conditions and parsing in bash
+# Learning loops, Conditions and parsing in bash

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Prints "Holberton school" 10 times using while loop
+
+i=0
+while (( i < 10 ))
+do
+    echo "Holberton School"
+    (( i++ ))
+done
