@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 #Script to install nginx web server on ubuntu server
-#Responds with a string "Holberton School" when it receives a GET request
-#/redirect_me redirects user to another page
 #Has a custom header i.e X-Served-by HOSTNAME
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo echo "Holberton School" >> /var/www/html/index.html
-sed -i "40i\add_header X-Served-By $HOSTNAME/" etc/nginx/sites-available/default
-sudo service nginx restart
+apt-get update
+apt-get upgrade
+apt-get -y install nginx
+sed -i "11i\add_header X-Served-By $HOSTNAME/" etc/nginx/nginx.conf
+service nginx restart
