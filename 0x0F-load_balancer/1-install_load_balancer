@@ -30,7 +30,8 @@ defaults
     timeout connect  5000
     timeout client  10000
     timeout server  10000
-listen appname 0.0.0.0:80
+listen appname 
+    bind 0.0.0.0:80
     mode http
     stats enable
     stats uri /haproxy?stats
@@ -40,8 +41,8 @@ listen appname 0.0.0.0:80
     balance roundrobin
     option httpclose
     option forwardfor
-    server lamp1 34.73.50.31:80 check
-    server lamp2 34.73.156.72:80 check
+    server web-01 34.73.50.31:80 check
+    server web-02 34.73.156.72:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 #start HAProxy service
