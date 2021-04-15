@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+#Installs and configures HAproxy on lb-01 server
+
+#install HAProxy version 2.0
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.0
+apt-get update
+apt-get install haproxy=2.0.\*
+
+#enable HAProxy to be started by init script
+echo "ENABLED=1" >> /etc/default/haproxy
+
+#move default configuration file and create new on
+mv /etc/haproxy/haproxy.cfg{,.original}
+touch /etc/haproxy/haproxy.cfg
+
+#add configuration to new file
+printf %s "global
+    log 127.0.0.1 local0 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option redispatch
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
+listen appname 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    stats realm Strictly\ Private
+    stats auth A_Username:YourPassword
+    stats auth Another_User:passwd
+    balance roundrobin
+    option httpclose
+    option forwardfor
+    server lamp1 34.73.50.31:80 check
+    server lamp2 34.73.156.72:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+#start HAProxy service
+service haproxy start
