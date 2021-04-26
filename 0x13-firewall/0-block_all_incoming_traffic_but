@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Installs ufw on server and sets up few rules.
+
+sudo apt-get -y install ufw
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow http
+sudo ufw enable
