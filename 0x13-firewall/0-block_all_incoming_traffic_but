@@ -2,7 +2,7 @@
 # Installs ufw on server and sets up few rules.
 
 sudo apt-get -y install ufw
-sudo ufw allow ssh
-sudo ufw allow http
-sudo ufw allow http
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
 sudo ufw enable
