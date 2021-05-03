@@ -1,5 +1,6 @@
+#!/usr/bin/python3
+"""Obtains info from json placeholder api"""
 import requests
-import json
 import sys
 
 
