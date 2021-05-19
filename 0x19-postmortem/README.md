@@ -2,7 +2,7 @@
 On Monday, from 8:00 PM to 10:20 PM, our whole site was down. Every part of our app was not functional and 100% of our users couldn't access any of the services we offer, right from payments to bookings. This was caused by an overload of users on our server hence leading to the site's crash.
 
 # Issue Timeline
-8:05 PM - A regular user reaches out to the team saying he couldn't reach the site
+8:05 PM - A regular user reaches out to the team saying he couldn't reach the site <br />
 8:10 PM - Our representative advises the user to restart his internet internet router 
 8:20 PM - 10 more similar complaints are reported from different complaints
 8:22 PM - Representative forwards complaint to system administrator
